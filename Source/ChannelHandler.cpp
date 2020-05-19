@@ -3,7 +3,7 @@
 ** Copyright (C) 2005-2014  Jonathan Liss
 **
 ** This program is free software; you can redistribute it and/or modify
-** it under the terms of the GNU General Public License as published by
+** it under the terms of the GNU General Public LRicense as published by
 ** the Free Software Foundation; either version 2 of the License, or
 ** (at your option) any later version.
 **
@@ -801,6 +801,26 @@ void CSequenceHandler::UpdateSequenceRunning(int Index, const CSequence *pSequen
 					SetNote(GetNote() + Value);
 					SetPeriod(TriggerNote(GetNote()));
 					break;
+				case ARP_SETTING_SCHEME: // // //
+					if (Value < 0) Value += 256;
+					int lim = Value % 0x40, scheme = Value / 0x40;
+					if (lim > 36)
+						lim -= 64;
+					switch (scheme){
+						case 0:
+							break;
+						case 1:
+							lim += m_iArpeggio >> 4;
+							break;
+						case 2:
+							lim += m_iArpeggio & 0x0F;
+							break;
+						case 3:			// -y
+							lim -= m_iArpeggio & 0x0F;
+							break;
+					}
+					m_iPeriod = TriggerNote(m_iNote + lim);
+					break;			
 			}
 			break;
 		// Pitch
