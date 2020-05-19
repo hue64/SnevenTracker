@@ -66,3 +66,7 @@ enum arp_setting_t {
 };
 
 // // //
+
+const int ARPSCHEME_MODE_X = 64;
+const int ARPSCHEME_MODE_Y = 128;
+const int ARPSCHEME_MODE_NEG_Y = 192;
