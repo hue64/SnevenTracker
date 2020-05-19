@@ -43,7 +43,7 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 	virtual void OnKeyReturn();
 	
-	void TranslateMML(CString String, int Max, int Min);
+	void TranslateMML(CString String, int Max, int Min, boolean arpScheme = false);
 	void SelectSequence(int Sequence, int Type);
 
 protected:
