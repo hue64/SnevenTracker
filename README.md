@@ -1,3 +1,4 @@
+Note: SnevenTracker arp schemes is a failed project. Want arp schemes? Make SN7 style music on the N163.
 # SnevenTracker
 
 SnevenTracker (SN76489 Tracker) is a fork of FamiTracker version 0.4.6 that emulates the Texas Instruments SN76489 sound chip, which is used in a wide variety of computers and gaming consoles. The project's ultimate aim is to support multiple sound chips in a more modular manner than 0.4.6, and then forward-port these changes to [0CC-FamiTracker](https://github.com/HertzDevil/0CC-FamiTracker).
